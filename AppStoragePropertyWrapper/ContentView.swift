@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("username") var username = "SwiftUI User"
+    
     var body: some View {
-        Text("Hello, world!").padding()
+        Text("User name is \(username)").padding()
+        
+        Button("Get my new name") {
+            withAnimation {
+                username = "New Name User"
+            }
+        }
     }
 }
 
